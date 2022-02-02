@@ -1,13 +1,13 @@
 import React from 'react';
 
-import TaskField from './components/TaskField/TaskField';
+import CityField from './components/CityField/CityField';
 
 import './App.scss';
 
 const App = () => {
   return (
     <div>
-      <TaskField />
+      <CityField />
     </div>
   );
 };

@@ -4,39 +4,39 @@ import {
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import TaskField from '../../components/TaskField/TaskField';
+import CityField from '../../components/CityField/CityField';
 
 
 test('input field to be in the DOM', () => {
-  render(<TaskField />);
+  render(<CityField />);
   const inputElem = screen.queryByRole(
     'textbox', 
-    { name: 'Task' }
+    { name: 'City' }
   );
   expect(inputElem).toBeInTheDocument();
 });
 
 test('input value with respect to keyboard events', () => {
-  render(<TaskField />);
+  render(<CityField />);
 
   const inputElem = screen.getByRole(
     'textbox',
-    { name: 'Task' }
+    { name: 'City' }
   );
   userEvent.clear(inputElem);
-  userEvent.type(inputElem, 'listen to a podcast');
-  expect(inputElem.value).toBe('listen to a podcast');
+  userEvent.type(inputElem, 'Bangalore');
+  expect(inputElem.value).toBe('Bangalore');
 
   userEvent.clear(inputElem);
   expect(inputElem.value).toBe('');
 });
 
 test('add button renders with correct text', () => {
-  render(<TaskField />);
+  render(<CityField />);
 
   const btnElem = screen.queryByRole(
     'button',
-    { name: 'Add Task' }
+    { name: 'Add City' }
   );
   expect(btnElem).toBeInTheDocument();
 });
